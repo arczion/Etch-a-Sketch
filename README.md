@@ -17,4 +17,7 @@ Target: Create a dynamic canvas of square boxes that stacks themselves into a cl
 Task Breakdown:
 
     1. Create boilerplate html, with a container div
-    2. 
+    2. Add div using js
+    3. Take input for no. of boxes
+    4. Add interactions
+    5. Randomize color
