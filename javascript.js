@@ -17,16 +17,13 @@ function createDiv(numOfDiv) {
 
 function getInput() {
         removeDiv();
-        const numOfDiv = parseInt(prompt("Enter the number of boxes"));
+        let numOfDiv = parseInt(prompt("Enter the number of boxes"));
         
         if (numOfDiv > 100) {
             numOfDiv = 100;
             alert("Max limit reached, setting to 100");
         }
-        else { 
-            alert(`You entered: ${numOfDiv}`);
-        }
-    createDiv(numOfDiv);
+        createDiv(numOfDiv);
 }
 
 function removeDiv() {
