@@ -1,14 +1,27 @@
 console.log("Hello");
-let numOfDiv = parseInt(prompt("Enter the number of boxes"));
-//alert(`You entered: ${numOfDiv}`);
-if (numOfDiv > 100) {
-    numOfDiv = 100;
-    alert("Max limit reached, setting to 100");
+
+//btn event listener
+const btn = document.querySelector('#btn');
+
+function getInput() {
+    
+    const numOfDiv = parseInt(prompt("Enter the number of boxes"));
+        
+        if (numOfDiv > 100) {
+            numOfDiv = 100;
+            alert("Max limit reached, setting to 100");
+        }
+        else { 
+            alert(`You entered: ${numOfDiv}`);
+        }
+    // create Divs
+    for(let i = 1; i <= numOfDiv; i++) {
+        const container = document.querySelector(".container");
+        const content = document.createElement("div");
+        content.classList.add("content");
+        container.appendChild(content);
+    }
 }
 
-for(let i = 1; i <= numOfDiv; i++) {
-    const container = document.querySelector(".container");
-    const content = document.createElement("div");
-    content.classList.add("content");
-    container.appendChild(content);
-}
+btn.addEventListener("click", getInput );
+
