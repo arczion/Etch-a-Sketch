@@ -16,7 +16,7 @@ function createDiv(numOfDiv) {
 }
 
 function getInput() {
-        
+        removeDiv();
         const numOfDiv = parseInt(prompt("Enter the number of boxes"));
         
         if (numOfDiv > 100) {
@@ -29,10 +29,13 @@ function getInput() {
     createDiv(numOfDiv);
 }
 
-function removeDiv(numOfDiv) {
-
+function removeDiv() {
+    if (container.hasChildNodes()) {
+        while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+        }
+    }
 }
-
 
 
 btn.addEventListener("click", getInput );
