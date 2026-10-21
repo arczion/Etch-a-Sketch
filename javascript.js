@@ -39,9 +39,18 @@ btn.addEventListener("click", getInput );
 // Event listener for hover interaction 
 const divs = document.querySelectorAll(".content");
 
+//Hover in interaction
 divs.forEach((div) => {
     div.addEventListener("mouseenter", (event) => {
         event.target.style.backgroundColor = "purple";
+        
+    });
+});
+
+//Hover Out
+divs.forEach((div) => {
+    div.addEventListener("mouseleave", (event) => {
+        event.target.style.backgroundColor = "";
     });
 });
 
