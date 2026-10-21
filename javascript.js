@@ -1,9 +1,8 @@
 console.log("Hello");
 
 //btn event listener
-const btn = document.querySelector('#btn');
+const btn = document.querySelector("#btn");
 const container = document.querySelector(".container");
-
 createDiv(16);
 
 function createDiv(numOfDiv) {
@@ -36,4 +35,13 @@ function removeDiv() {
 
 
 btn.addEventListener("click", getInput );
+
+// Event listener for hover interaction 
+const divs = document.querySelectorAll(".content");
+
+divs.forEach((div) => {
+    div.addEventListener("mouseenter", (event) => {
+        event.target.style.backgroundColor = "purple";
+    });
+});
 
