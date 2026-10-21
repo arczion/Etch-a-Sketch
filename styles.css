@@ -1,6 +1,8 @@
  html {
     box-sizing: border-box;
     padding: 32px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: azure;
 }
 
 *:before, *:after {
@@ -20,8 +22,7 @@
 }
 
 .content {
-    background: peachpuff;
-    border: 4px solid brown;
+    background: rgb(147, 43, 199);
     flex: 0 1 auto;
     height: 100px;
     width: 100px;
@@ -37,4 +38,9 @@
 
 .header {
     padding-bottom: 18px;
+}
+
+body {
+    background-color: #110032;
+    
 }

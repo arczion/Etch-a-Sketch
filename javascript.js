@@ -10,14 +10,14 @@ function hover()
 {
 const allDiv = document.querySelectorAll(".content");
 allDiv.forEach((div) => {
-    div.addEventListener("mouseover", (event) => {    
-    event.target.style.backgroundColor = "red";   
+    div.addEventListener("mouseenter", (event) => {    
+    event.target.style.backgroundColor = "pink";   
    });
 });
 
 //Hover Out
 allDiv.forEach((div) => {
-    div.addEventListener("mouseout", (event) => {
+    div.addEventListener("mouseleave", (event) => {
     event.target.style.backgroundColor = "";
    });
 });
