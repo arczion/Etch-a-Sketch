@@ -5,12 +5,33 @@ const btn = document.querySelector("#btn");
 const container = document.querySelector(".container");
 createDiv(16);
 
+//Hover in interaction
+function hover()
+{
+const allDiv = document.querySelectorAll(".content");
+allDiv.forEach((div) => {
+    div.addEventListener("mouseover", (event) => {    
+    event.target.style.backgroundColor = "red";   
+   });
+});
+
+//Hover Out
+allDiv.forEach((div) => {
+    div.addEventListener("mouseout", (event) => {
+    event.target.style.backgroundColor = "";
+   });
+});
+}
+
+hover();
+
 function createDiv(numOfDiv) {
 // create Divs
-    for(let i = 1; i <= numOfDiv; i++) {
+    for(let i = 0; i < numOfDiv; i++) {
         const content = document.createElement("div");
         content.classList.add("content");
         container.appendChild(content);
+        hover();
     }
 }
 
@@ -35,22 +56,4 @@ function removeDiv() {
 
 
 btn.addEventListener("click", getInput );
-
-// Event listener for hover interaction 
-const divs = document.querySelectorAll(".content");
-
-//Hover in interaction
-divs.forEach((div) => {
-    div.addEventListener("mouseenter", (event) => {
-        event.target.style.backgroundColor = "purple";
-        
-    });
-});
-
-//Hover Out
-divs.forEach((div) => {
-    div.addEventListener("mouseleave", (event) => {
-        event.target.style.backgroundColor = "";
-    });
-});
 
