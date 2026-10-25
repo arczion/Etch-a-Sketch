@@ -22,7 +22,7 @@
 }
 
 .content {
-    background: rgb(147, 43, 199);
+    background: #fff;
     flex: 0 1 auto;
     height: 100px;
     width: 100px;
@@ -41,6 +41,6 @@
 }
 
 body {
-    background-color: #110032;
+    background-color: rgb(60, 60, 60);
     
 }
