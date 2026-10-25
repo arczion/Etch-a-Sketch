@@ -45,11 +45,7 @@ function getInput() {
 }
 
 function removeDiv() {
-    if (container.hasChildNodes()) {
-        while (container.hasChildNodes()) {
-        container.removeChild(container.firstChild);
-        }
-    }
+    container.replaceChildren();
 }
 
 
