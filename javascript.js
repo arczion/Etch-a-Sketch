@@ -15,7 +15,7 @@ allDiv.forEach((div) => {
     });
 });
 }
-
+createDiv(16);
 function createDiv(numOfDiv) {
 // create Divs
     const squareSize = 960 /numOfDiv;
