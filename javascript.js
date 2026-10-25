@@ -31,13 +31,16 @@ function createDiv(numOfDiv) {
 }
 
 function getInput() {
-        removeDiv();
-        let numOfDiv = parseInt(prompt("Enter the number of boxes"));
         
+        let numOfDiv = parseInt(prompt("Enter the number of boxes"));
+        if (isNaN(numOfDiv) || numOfDiv < 1) {
+            return;
+        }
         if (numOfDiv > 100) {
             numOfDiv = 100;
             alert("Max limit reached, setting to 100");
         }
+        removeDiv();
         createDiv(numOfDiv);
 }
 
