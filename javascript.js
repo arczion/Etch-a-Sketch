@@ -10,9 +10,18 @@ function hover()
 const allDiv = document.querySelectorAll(".content");
 allDiv.forEach((div) => {
     div.addEventListener("mouseenter", (event) => {
-        if (event.target.style.backgroundColor === "") {
+        const square = event.target;
+        let passes = Number(square.dataset.passes) || 0;
+
+        if (passes === 0) {
         const randomColor = Math.floor(Math.random()*16777215).toString(16).padStart(6, "0");
-        event.target.style.backgroundColor = "#" + randomColor;
+        event.target.style.backgroundColor = "#" + randomColor;    
+        }
+        
+        if (passes < 10) {
+            passes++;
+            square.dataset.passes = passes;
+            square.style.opacity = passes/ 10;
         }
     });
 });
