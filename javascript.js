@@ -4,29 +4,27 @@ console.log("Hello");
 const btn = document.querySelector("#btn");
 const container = document.querySelector(".container");
 
-//Hover in interaction
-function hover()
-{
-const allDiv = document.querySelectorAll(".content");
-allDiv.forEach((div) => {
-    div.addEventListener("mouseenter", (event) => {
-        const square = event.target;
-        let passes = Number(square.dataset.passes) || 0;
+//Event delegation
 
-        if (passes === 0) {
-        const randomColor = Math.floor(Math.random()*16777215).toString(16).padStart(6, "0");
-        event.target.style.backgroundColor = "#" + randomColor;    
-        }
-        
-        if (passes < 10) {
-            passes++;
-            square.dataset.passes = passes;
-            square.style.opacity = passes/ 10;
-        }
-    });
+container.addEventListener("mouseover", (event) => {
+    const square = event.target;
+    if (!square.classList.contains("content")) return;
+
+    let passes = Number(square.dataset.passes) || 0;
+
+    if (passes === 0) {
+        const randomColor = Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+        square.style.backgroundColor = "#" + randomColor;
+    }
+
+    if (passes < 10) {
+        passes++;
+        square.dataset.passes = passes;
+        square.style.opacity = passes/10;
+    }
 });
-}
-createDiv(16);
+
+
 function createDiv(numOfDiv) {
 // create Divs
     const squareSize = 960 /numOfDiv;
@@ -38,12 +36,11 @@ function createDiv(numOfDiv) {
         content.style.height = `${squareSize}px`
         container.appendChild(content);
     }
-    hover();
 }
 
 function getInput() {
         
-        let numOfDiv = parseInt(prompt("Enter the number of boxes"));
+        let numOfDiv = Number(prompt("Enter the number of boxes"));
         if (isNaN(numOfDiv) || numOfDiv < 1) {
             return;
         }
@@ -59,6 +56,6 @@ function removeDiv() {
     container.replaceChildren();
 }
 
-
+createDiv(16);
 btn.addEventListener("click", getInput );
 
