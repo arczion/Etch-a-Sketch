@@ -23,8 +23,7 @@
 
 .content {
     background: #303030;
-    flex: 0 1 auto;
-    opacity: 1;
+    flex: none;
     border: .15px dashed #404040;
    
 }
